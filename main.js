@@ -71,10 +71,10 @@ colorPicker.addEventListener('input', (e) => {
   ink = e.target.value;
   if (grab) {
     grab = false;
-    dropper.classList.remove('btn-on');
+    dropper.classList.remove('button-on');
   }
   // fill = false;
-  // colorFillButton.classList.remove('btn-on');
+  // colorFillButton.classList.remove('button-on');
 });
 
 // bg color picker
@@ -86,49 +86,49 @@ const buttons = document.getElementsByTagName('button');
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', () => {
-    buttons[i].classList.toggle('btn-on');
+    buttons[i].classList.toggle('button-on');
   });
 }
 
 // shading toggle
 let shading = false;
-const shaderButton = document.querySelector('#shader-btn');
+const shaderButton = document.querySelector('#shader-button');
 shaderButton.addEventListener('click', () => {
   if (shading) {
     shading = false;
   } else {
     shading = true;
     rainbow = false;
-    rainbowButton.classList.remove('btn-on');
+    rainbowButton.classList.remove('button-on');
     lighten = false;
-    lightenButton.classList.remove('btn-on');
+    lightenButton.classList.remove('button-on');
     eraser = false;
-    eraserButton.classList.remove('btn-on');
+    eraserButton.classList.remove('button-on');
   }
   if (grab) {
     grab = false;
-    dropper.classList.remove('btn-on');
+    dropper.classList.remove('button-on');
   }
 });
 
 // lighten toggle
 let lighten = false;
-const lightenButton = document.querySelector('#lighten-btn');
+const lightenButton = document.querySelector('#lighten-button');
 lightenButton.addEventListener('click', () => {
   if (lighten) {
     lighten = false;
   } else {
     lighten = true;
     shading = false;
-    shaderButton.classList.remove('btn-on');
+    shaderButton.classList.remove('button-on');
     rainbow = false;
-    rainbowButton.classList.remove('btn-on');
+    rainbowButton.classList.remove('button-on');
     eraser = false;
-    eraserButton.classList.remove('btn-on');
+    eraserButton.classList.remove('button-on');
   }
   if (grab) {
     grab = false;
-    dropper.classList.remove('btn-on');
+    dropper.classList.remove('button-on');
   }
 });
 
@@ -174,58 +174,58 @@ dropper.addEventListener('click', () => {
   // when grab is true, all drawing is frozen until a color is selected
   if (grab) {
     grab = false;
-    dropper.classList.remove('btn-on');
+    dropper.classList.remove('button-on');
   } else {
     grab = true;
   }
 
   if (fill) {
     fill = false;
-    colorFillButton.classList.remove('btn-on');
+    colorFillButton.classList.remove('button-on');
   }
 });
 
 // default eraser to false and listen for toggle
 let eraser = false;
-const eraserButton = document.querySelector('#eraser-btn');
+const eraserButton = document.querySelector('#eraser-button');
 eraserButton.addEventListener('click', () => {
   if (eraser) {
     eraser = false;
   } else {
     eraser = true;
     shading = false;
-    shaderButton.classList.remove('btn-on');
+    shaderButton.classList.remove('button-on');
     rainbow = false;
-    rainbowButton.classList.remove('btn-on');
+    rainbowButton.classList.remove('button-on');
     lighten = false;
-    lightenButton.classList.remove('btn-on');
+    lightenButton.classList.remove('button-on');
   }
 
   if (grab) {
     grab = false;
-    dropper.classList.remove('btn-on');
+    dropper.classList.remove('button-on');
   }
 });
 
 // default rainbow ink to false and listen for toggle
 let rainbow = false;
-const rainbowButton = document.querySelector('#rainbow-btn');
+const rainbowButton = document.querySelector('#rainbow-button');
 rainbowButton.addEventListener('click', () => {
   if (rainbow) {
     rainbow = false;
   } else {
     rainbow = true;
     shading = false;
-    shaderButton.classList.remove('btn-on');
+    shaderButton.classList.remove('button-on');
     lighten = false;
-    lightenButton.classList.remove('btn-on');
+    lightenButton.classList.remove('button-on');
     eraser = false;
-    eraserButton.classList.remove('btn-on');
+    eraserButton.classList.remove('button-on');
   }
 
   if (grab) {
     grab = false;
-    dropper.classList.remove('btn-on');
+    dropper.classList.remove('button-on');
   }
 });
 
@@ -253,11 +253,11 @@ function rangeSlider(value) {
   listen();
   reInit();
   // turn the grid button back on if it is off.
-  const gridButton = document.querySelector('#grid-btn');
-  if (gridButton.classList.contains('btn-on')) {
+  const gridButton = document.querySelector('#grid-button');
+  if (gridButton.classList.contains('button-on')) {
     //pass
   } else {
-    gridButton.classList.toggle('btn-on');
+    gridButton.classList.toggle('button-on');
   }
 }
 
@@ -338,7 +338,7 @@ function clearGrid() {
 
   // turn off the button after a very short delay
   setTimeout(function () {
-    clearButton.classList.remove('btn-on');
+    clearButton.classList.remove('button-on');
   }, 1400);
 }
 clearButton.addEventListener('click', clearGrid);
@@ -351,7 +351,7 @@ let fill = false;
 colorFillButton.addEventListener('click', () => {
   if (grab) {
     grab = false;
-    dropper.classList.remove('btn-on');
+    dropper.classList.remove('button-on');
   }
   if (fill) {
     fill = false;
@@ -490,7 +490,7 @@ function colorFill(e) {
       e.target.parentElement.children[toFill[i]].setAttribute('data-inked', 'true');
     }
 
-    colorFillButton.classList.remove('btn-on');
+    colorFillButton.classList.remove('button-on');
     fill = false;
   }
 }
@@ -629,19 +629,19 @@ function listen() {
         } else {
           colorPicker.value = RGBToHex(ink);
         }
-        dropper.classList.remove('btn-on');
+        dropper.classList.remove('button-on');
         grab = false;
 
         // once color has been grabbed, turn off other buttons so you can draw with the new color without
         // having to toggle the other button manually
         rainbow = false;
-        rainbowButton.classList.remove('btn-on');
+        rainbowButton.classList.remove('button-on');
         shading = false;
-        shaderButton.classList.remove('btn-on');
+        shaderButton.classList.remove('button-on');
         lighten = false;
-        lightenButton.classList.remove('btn-on');
+        lightenButton.classList.remove('button-on');
         eraser = false;
-        eraserButton.classList.remove('btn-on');
+        eraserButton.classList.remove('button-on');
       }
     });
   }
@@ -681,7 +681,7 @@ function listen() {
   });
 
   // toggle grid lines
-  const gridButton = document.querySelector('#grid-btn');
+  const gridButton = document.querySelector('#grid-button');
 
   gridButton.addEventListener('click', () => {
     for (i = 0; i < gridItems.length; i++) {

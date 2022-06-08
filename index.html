@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <h1>Etch-A-Sketch</h1>
+    <div class="wrapper">
+        <div class="header">
+            <p>Etch-A-Sketch</p>
+        </div>
+
+        <div class="controls">
+            <div class="color-card">
+                <div class="color-box">
+                    <input type="color" id="color-select">
+                </div>
+                <span>Pen Colour</span>
+            </div>
+            <button id="color-fill">Colour Fill</button>
+            <button id="color-grabber">Colour Grabber</button>
+
+            <button id="eraser-button">Eraser</button>
+            <button id="rainbow-button">Rainbow</button>
+            <button id="shader-button">Shader</button>
+            <button id="lighten-button">Lighten</button>
+
+
+            <div class="slider-box">
+                <input type="range" value="24" min="1" max="100" id="range-slider"
+                onmousemove="rangeSliderValue(this.value)" onChange="rangeSlider(this.value)">
+                <div id="progress-bar"></div>
+            </div>
+
+            <p class="grid-size">Grid size: <span id="range-value">24</span> x <span id="range-value">24</span></p>
+
+            <button id="grid-button" class="button-on">Grid Lines</button>
+            <button id="clear-grid">Clear</button>
+
+        </div>
+        <div class="grid-wrapper">
+            <div class="grid-container toggle-grid" draggable="false"></div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
